@@ -18,7 +18,7 @@
  *     is watching. We have to do it the right way.
  *     The JavaScript way!
  *
- *     Bratlsoft - 2026-03-15
+ *     Anna Zupan - 2026-03-30
  *******************************************************/
 
 /**
@@ -27,6 +27,15 @@
  * without the risk of catching an eye infection!
  */
 
+let allParagraphs = document.querySelectorAll("p");
+for (let paragraph of allParagraphs) {
+    paragraph.style.color = "white";
+    paragraph.style.backgroundColor = "black";
+}
+
+let messageParagraph = document.getElementById("message");
+messageParagraph.style.color = "white";
+messageParagraph.style.backgroundColor = "#595656";
 
 
 
@@ -36,6 +45,8 @@
  * Can't we just remove them all together?
  */
 
+let allMinions = document.querySelector("ul");
+allMinions.remove();
 
 
 
@@ -45,6 +56,8 @@
  * And while at it, let the world know again, that they are back in town!
  */
 
+document.getElementById("heroes_of_the_web").style.visibility = "visible";
+alert("The heroes are back in town!");
 
 
 /**
@@ -52,6 +65,9 @@
  * Our Webpage is safe again! But Dr. Dom is still holding our Headline as a hostage!
  * Do your thing, savior!
  */
+
+document.querySelector("h1").textContent = "It's mine again, Dr. Dom!"
+
 
 
 
@@ -63,3 +79,5 @@
  * It might sound paranoid. But I can't get rid of the feeling, that he is still here,
  * somewhere in the DOM. I can still feel his Code. Can you identify the source and remove it?
  */
+
+document.querySelector("script").remove();
