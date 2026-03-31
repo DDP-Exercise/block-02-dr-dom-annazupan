@@ -11,10 +11,26 @@
  *     For my code to show it's full potential, I just
  *     need one object. Can you help me out?
  *
- *     Bratlsoft - 2026-03-15
+ *     Anna Zupan - 2026-03-30
  *******************************************************/
 
 //TODO: Place one object here.
+
+const SAVIOR = {
+    name: "Munchkin",
+    age: "20",
+    location: "Vienna",
+    hobbies: ["Coding", "Cooking", "Crafting"],
+    type_of_companion: "passive-aggressive Unicorn",
+    companion: {
+        companion_name: "Munchi",
+        color: "rainbow",
+        mood: "Constantly annoyed",
+        horn_sharpness: "Dangerously pointy",
+        favorite_hobby: "Judging people silently",
+        glitter_trail_status: "Disabled to save energy",
+    }
+}
 
 /*******************************************************
  *   DO NOT CHANGE THE CODE BELOW!

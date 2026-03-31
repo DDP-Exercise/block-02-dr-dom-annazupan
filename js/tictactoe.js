@@ -14,7 +14,7 @@
  *     For that reason, your little program should be written in a way, that it can
  *     scale with the size of the battlefield (3x3, 4x4, ..., nxn).
  *
- *     Bratlsoft - 2026-03-15
+ *     Anna Zupan - 2026-03-30
  *******************************************************/
 
 const X = "Savior (X)";
@@ -68,3 +68,92 @@ const BATTLEFIELD =
 // Check Vertical
 // Check Main Diagonal
 // Check Anti Diagonal
+
+let size = BATTLEFIELD.length;
+let winner = null;
+
+
+// horizontal check
+
+for (let r = 0; r < size; r++) {
+    let first = BATTLEFIELD[r][0];
+    if (first == null) continue;
+
+    let win = true;
+
+    for (let c = 1; c < size; c++) {
+        if (BATTLEFIELD[r][c] !== first) {
+            win = false;
+        }
+    }
+
+    if (win) {
+        winner = first;
+        console.log(winner + " wins horizontally!");
+    }
+}
+
+
+// vertical check
+
+for (let c = 0; c < size; c++) {
+    let first = BATTLEFIELD[0][c];
+    if (first == null) continue;
+
+    let win = true;
+
+    for (let r = 1; r < size; r++) {
+        if (BATTLEFIELD[r][c] !== first) {
+            win = false;
+        }
+    }
+
+    if (win) {
+        winner = first;
+        console.log(winner + " wins vertically!");
+    }
+}
+
+// main diagonal
+
+let firstMain = BATTLEFIELD[0][0];
+if (firstMain != null) {
+    let win = true;
+
+    for (let r = 1; r < size; r++) {
+        if (BATTLEFIELD[r][r] !== firstMain) {
+            win = false;
+        }
+    }
+
+    if (win) {
+        winner = firstMain;
+        console.log(winner + " wins on main diagonal!");
+    }
+}
+
+// anti diagonal
+
+let firstAnti = BATTLEFIELD[0][size - 1];
+if (firstAnti != null) {
+    let win = true;
+
+    for (let r = 1; r < size; r++) {
+        if (BATTLEFIELD[r][size - 1 - r] !== firstAnti) {
+            win = false;
+        }
+    }
+
+    if (win) {
+        winner = firstAnti;
+        console.log(winner + " wins on anti-diagonal!");
+    }
+}
+
+
+// no winner
+
+if (winner == null) {
+    console.log("No winner yet!");
+}
+
